@@ -16,16 +16,6 @@ const TodoList = (props) => {
                         color={todo.color}
                     />
                 ))}
-                {/* {todos.todos.map(todo =>
-                    <TodoItem
-                        key={todo.id}
-                        id={todo.id}
-                        text={todo.text}
-                        completed={todo.completed}
-                        color={todo.color}
-
-                    />
-                )} */}
             </ul>
         </div>
     )
