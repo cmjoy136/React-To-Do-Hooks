@@ -1,8 +1,14 @@
 [
  {
      "id": 1,
-     "text": "",
+     "text": "Test Todo",
      "completed": false,
-     "color": null
+     "color": "blue"
+ },
+ {
+     "id": 2,
+     "text": "todo number 2",
+     "completed": true,
+     "color": "red"
  }
 ]

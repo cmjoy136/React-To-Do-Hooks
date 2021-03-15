@@ -13,24 +13,25 @@ const initialState = {
     todos: todoList
 }
 
-const todos= (state = initialState, action) => {
+
+const todos = (state = initialState, action) => {
     switch(action.type){
         case ADD_TODO:
             return{
                 ...state,
-                todos: todos.push({
-                    //newtodo
-                })
-
+                todos: [...state.todos,
+                    {
+                    id: Math.random(5000 * 1),
+                    text: action.text,
+                    completed: false,
+                    color: 'red',
+                }
+                ]
             }
         case TOGGLE_TODO:
             return{
                 ...state,
-                todos: todos.filter(
-                    //target todo  id 
-                    //set to completed to true
-                )
-
+                todos: state.todos.map(todo =>  todo.id === action.id ? {...todo, completed: !todo.completed} : todo )
             }
         case SELECT_COLOR:
             return{
@@ -38,7 +39,8 @@ const todos= (state = initialState, action) => {
             }
         case DELETE_TODO:
             return{
-
+                ...state,
+                todos: state.todos.filter(todo => todo.id !== action.id)
             }
         case CLEAR_COMPLETED_TODOS:
             return{

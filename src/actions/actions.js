@@ -8,32 +8,31 @@ import {
   DELETE_COLOR,
 } from "./constants";
 
-export const addTodo = () => {
+export const addTodo = (text) => {
   return {
     type: ADD_TODO,
-    text,
+    text
+  }
+}
+
+export const toggleTodo = (id) => {
+  return {
+    type: TOGGLE_TODO,
+    id
+  }
+}
+
+export const selectColor = (color) => {
+  return {
+    type: SELECT_COLOR,
     color
   }
 }
 
-export const toggleTodo = () => {
-  return {
-    type: TOGGLE_TODO,
-    //todo id?
-  }
-}
-
-export const selectColor = () => {
-  return {
-    type: SELECT_COLOR,
-    //color
-  }
-}
-
-export const deleteTodo = () => {
+export const deleteTodo = (id) => {
   return {
     type: DELETE_TODO,
-    //todo id
+    id
   }
 }
 
@@ -43,13 +42,15 @@ export const clearCompleted = () => {
     //todo completed true status
   }
 }
-export const addColor = () => {
+export const addColor = (color) => {
   return {
     type: ADD_COLOR,
+    color
   }
 }
-export const deleteColor = () => {
+export const deleteColor = (color) => {
   return {
     type: DELETE_COLOR,
+    color
   };
 };
